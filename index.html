@@ -27,7 +27,7 @@
                     display('hello', target="helloDiv")
 
                 fig = go.Figure(data=go.Scatter(x=[1,2, 3], y=[1, 2, 3]))
-                figure.data[0].on_click(select_params)
+                fig.data[0].on_click(select_params)
                 graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
                 plot = js.Plotly.newPlot("chart1", js.JSON.parse(graphJSON))
          
