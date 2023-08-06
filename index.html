@@ -26,7 +26,6 @@
                     # from event handlers
                     display('hello', target="helloDiv")
 
-<!--                 fig = px.line(x=[1,2, 3], y=[1, 2, 3])  -->
                 fig = go.Figure(data=go.Scatter(x=[1,2, 3], y=[1, 2, 3]))
                 figure.data[0].on_click(select_params)
                 graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
