@@ -13,6 +13,7 @@
 <body>
     <div id="helloDiv"></div>
     <button id="my-button" py-onClick="display_hello()">Click me</button>
+    <div id="helloDiv1"></div>
     <div id="chart1"></div>
     <div id="chart2"></div>
     <py-script>
@@ -34,10 +35,14 @@
                 plot = js.Plotly.newPlot("chart1", js.JSON.parse(graphJSON))
 
 
+
+                def select_params1(trace, points, selector):
+                    display('Hello, World!', target="helloDiv1")
+
                 df = pd.read_csv("https://gist.githubusercontent.com/awanshrestha/6481638c175e82dc6a91a499a8730057/raw/1791ef1f55f0be268479286284a0452129371003/TSMC.csv")
                 df = df.set_index(pd.DatetimeIndex(df['Date']))
                 figure = go.Figure(
-                    	data = [
+                    	data1 = [
                         	go.Candlestick(
                             	x = df.index,
                             	low = df['Low'],
@@ -49,6 +54,7 @@
                         	)
                         	]
                 )
+                figure.data1[0].on_click(select_params1)
                 graphJSON1 = json.dumps(figure, cls=plotly.utils.PlotlyJSONEncoder)
                 plot1 = js.Plotly.newPlot("chart2", js.JSON.parse(graphJSON1))
 
