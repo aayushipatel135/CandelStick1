@@ -7,7 +7,8 @@
 
   </head>
   <body>
-    <py-script > 
+    <div id="plot">
+    <py-script output="plot"> 
         import js, json, plotly
         import plotly.graph_objects as go
         import pandas as pd
@@ -26,9 +27,11 @@
                 )
                 ]
         )
-        js.plot(figure.to_json(), "chart1")
+        figure
+<!--         js.plot(figure.to_json(), "chart1") -->
 <!--         graphJSON = json.dumps(figure, cls=plotly.utils.PlotlyJSONEncoder)
         plot = js.Plotly.newPlot("chart1", js.JSON.parse(graphJSON))  -->
     </py-script>
+    </div>
   </body>
 </html>
