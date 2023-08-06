@@ -50,7 +50,7 @@
                             )
                             ]
                 )
-                figure.data[0].on_click(select_params)
+<!--                 figure.data[0].on_click(select_params) -->
                 graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
                 plot = js.Plotly.newPlot("chart1", js.JSON.parse(graphJSON))
          
