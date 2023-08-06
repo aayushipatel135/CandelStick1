@@ -10,41 +10,25 @@
     <py-script > 
         import js, json, plotly
         import plotly.graph_objects as go
-        
-<!--         def select_params(trace, points, selector):
-            display('Hello, World!', target="helloDiv")
-        
-        def display_hello():
-            # this fails because we don't have any implicit target
-            # from event handlers
-            display('hello', target="helloDiv")
-
-        #fig = px.line(x=[1,2, 3], y=[1, 2, 3]) 
-        fig = go.Figure(data=go.Scatter(x=[1,2, 3], y=[1, 2, 3]))
-        fig.data[0].on_click(select_params)
-        graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
-        plot = js.Plotly.newPlot("chart1", js.JSON.parse(graphJSON)) -->
-<!--       import js, json, plotly
-      import plotly.graph_objects as go
-      import pandas as pd
-      df = pd.read_csv("https://gist.githubusercontent.com/awanshrestha/6481638c175e82dc6a91a499a8730057/raw/1791ef1f55f0be268479286284a0452129371003/TSMC.csv")
-      df = df.set_index(pd.DatetimeIndex(df['Date']))
-      figure = go.Figure(
-          data = [
-              go.Candlestick(
-                  x = df.index,
-                  low = df['Low'],
-                  high = df['High'],
-                  close = df['Adj Close'],
-                  open = df['Open'],
-                  increasing_line_color = 'green',
-                  decreasing_line_color = 'red'
-              )
-              ]
-      )
-      figure.show()
-      graphJSON = json.dumps(figure, cls=plotly.utils.PlotlyJSONEncoder)
-      plot = js.Plotly.newPlot("chart1", js.JSON.parse(graphJSON)) -->
+        import pandas as pd
+        df = pd.read_csv("https://gist.githubusercontent.com/awanshrestha/6481638c175e82dc6a91a499a8730057/raw/1791ef1f55f0be268479286284a0452129371003/TSMC.csv")
+        df = df.set_index(pd.DatetimeIndex(df['Date']))
+<!--         figure = go.Figure(
+            data = [
+                go.Candlestick(
+                    x = df.index,
+                    low = df['Low'],
+                    high = df['High'],
+                    close = df['Adj Close'],
+                    open = df['Open'],
+                    increasing_line_color = 'green',
+                    decreasing_line_color = 'red'
+                )
+                ]
+        )
+        figure.show()
+        graphJSON = json.dumps(figure, cls=plotly.utils.PlotlyJSONEncoder)
+        plot = js.Plotly.newPlot("chart1", js.JSON.parse(graphJSON))  -->
     </py-script>
   </body>
 </html>
