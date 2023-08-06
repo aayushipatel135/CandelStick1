@@ -6,7 +6,8 @@
     <py-config>
         packages = ['plotly','numpy','pandas']
         plugins = ["https://pyscript.net/latest/plugins/python/py_tutor.py"]
-        src = "https://github.com/aayushipatel135/CandelStick1/blob/main/data.csv"
+        [[fetch]]
+        files = ["./data.csv"]
     </py-config>
 </head>
 <body>
