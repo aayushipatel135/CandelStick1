@@ -5,22 +5,16 @@
     <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
     <py-config>
         packages = ['plotly','numpy','pandas']
+        plugins = [
+                              "https://pyscript.net/latest/plugins/python/py_tutor.py"
+                            ]
     </py-config>
 </head>
 <body>
     <div id="helloDiv"></div>
     <button id="my-button" py-onClick="display_hello()">Click me</button>
     <div id="chart1"></div>
-    <py-tutor>
-            <py-config>
-                            packages = [
-                              "js", "json", "plotly"
-                            ]
-                            plugins = [
-                              "https://pyscript.net/latest/plugins/python/py_tutor.py"
-                            ]
-            </py-config>
-            <py-script>
+    <py-script>
                 import js, json, plotly
                 #import plotly.express as px
                 import plotly.graph_objects as go
@@ -39,8 +33,7 @@
                 graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
                 plot = js.Plotly.newPlot("chart1", js.JSON.parse(graphJSON))
          
-            </py-script>
-    </py-tutor>
+    </py-script>
 </body>
 </html>
 
