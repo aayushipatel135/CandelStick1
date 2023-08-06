@@ -11,7 +11,7 @@
     </py-config>
 </head>
 <body>
-    <div id="chart1" style="height:100000px"></div>
+    <div id="chart1" ></div>
     <py-script>
                 import js, json, plotly
                 import plotly.graph_objects as go
@@ -20,7 +20,27 @@
                 df = pd.read_csv("data.csv")
                 df = df.set_index(pd.DatetimeIndex(df['Date']))
 
-
+                layout = go.Layout(
+                    autosize=False,
+                    width=1000,
+                    height=1000,
+                
+                    xaxis= go.layout.XAxis(linecolor = 'black',
+                                          linewidth = 1,
+                                          mirror = True),
+                
+                    yaxis= go.layout.YAxis(linecolor = 'black',
+                                          linewidth = 1,
+                                          mirror = True),
+                
+                    margin=go.layout.Margin(
+                        l=50,
+                        r=50,
+                        b=100,
+                        t=100,
+                        pad = 4
+                )
+        
                 fig = go.Figure(
                     	data = [
                         	go.Candlestick(
