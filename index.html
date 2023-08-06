@@ -27,7 +27,7 @@
                     # this fails because we don't have any implicit target
                     # from event handlers
                     display('hello', target="helloDiv")
-                
+
         
                 fig = go.Figure(data=go.Scatter(x=[1,2, 3], y=[1, 2, 3]))
                 fig.data[0].on_click(select_params)
@@ -36,7 +36,7 @@
 
 
 
-                def select_params1(trace, points, selector):
+<!--                 def select_params1(trace, points, selector):
                     display('Hello, World!', target="helloDiv1")
 
                 df = pd.read_csv("https://gist.githubusercontent.com/awanshrestha/6481638c175e82dc6a91a499a8730057/raw/1791ef1f55f0be268479286284a0452129371003/TSMC.csv")
@@ -56,7 +56,7 @@
                 )
                 figure.data1[0].on_click(select_params1)
                 graphJSON1 = json.dumps(figure, cls=plotly.utils.PlotlyJSONEncoder)
-                plot1 = js.Plotly.newPlot("chart2", js.JSON.parse(graphJSON1))
+                plot1 = js.Plotly.newPlot("chart2", js.JSON.parse(graphJSON1)) -->
 
          
     </py-script>
