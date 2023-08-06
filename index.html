@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Candle Stick Plot</title>
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+
+  </head>
+  <body>
+    <py-script > 
+      import plotly.graph_objects as go
+      import pandas as pd
+      df = pd.read_csv("https://gist.githubusercontent.com/awanshrestha/6481638c175e82dc6a91a499a8730057/raw/1791ef1f55f0be268479286284a0452129371003/TSMC.csv")
+      df = df.set_index(pd.DatetimeIndex(df['Date']))
+      figure = go.Figure(
+          data = [
+              go.Candlestick(
+                  x = df.index,
+                  low = df['Low'],
+                  high = df['High'],
+                  close = df['Adj Close'],
+                  open = df['Open'],
+                  increasing_line_color = 'green',
+                  decreasing_line_color = 'red'
+              )
+              ]
+      )
+      figure.show()
+      graphJSON = json.dumps(figure, cls=plotly.utils.PlotlyJSONEncoder)
+      plot = js.Plotly.newPlot("chart1", js.JSON.parse(graphJSON))
+    </py-script>
+  </body>
+</html>
